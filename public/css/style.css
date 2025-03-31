@@ -1,0 +1,107 @@
+table {
+    width: 100%;
+}
+
+td {
+    width: 50%;
+    vertical-align: top;
+}
+
+td#right {
+    max-width: 50;
+}
+
+div.example {
+    border: 1px solid black;
+}
+
+div#monaco {
+    height: 400px;
+}
+
+div#outputContainer {
+    display: none;
+}
+
+div#outputDiv {
+    margin-top: 1em;
+    font-family: mono;
+    background-color: lightgrey;
+    padding: 0.5em;
+    border: 1px solid black;
+	white-space: preserve;
+}
+
+code {
+    white-space: preserve;
+	background-color: #ccc;
+	border: 1px solid darkgrey;
+	padding: 0.2rem;
+}
+
+div#pages {
+    position: absolute;
+    bottom: 0px;
+    padding: 2em;
+}
+
+button {
+    border: 1px solid black;
+    margin-top: 1em;
+    margin-right: 1em;
+    padding: 0.25em;
+}
+
+#breadcrumbs {
+    color: #999;
+	clear: both;
+}
+
+#breadcrumbs #breadcrumbs-inner {
+	margin: 0 auto;
+	padding: 0.75rem 0;
+	font-size: .875rem;
+}
+
+#breadcrumbs ul {
+    margin:0;
+    padding:0 .5rem 0 1.5rem;
+    overflow: hidden;
+}
+#breadcrumbs-inner div {
+    padding:0 1.5rem;
+}
+#breadcrumbs li {
+    display:inline-block;
+}
+#breadcrumbs li+li:before {
+    padding:0 .5rem 0;
+    content:"\203A";
+}
+#breadcrumbs a:link,
+#breadcrumbs a:visited {
+    border-width:0;
+}
+#breadcrumbs a
+{
+	text-decoration: none;
+    color:var(--lt-color-overlay-default);
+}
+
+#breadcrumbs a:hover,
+#breadcrumbs a:focus {
+    color:var(--light-magenta-color);
+}
+
+#breadcrumbs .next,
+#breadcrumbs .prev {
+  float:right;
+}
+
+  #breadcrumbs {
+    display:block;
+    position: sticky;
+    top: 0px;
+    background: var(--dark-grey-color);
+    z-index: 1;
+  }

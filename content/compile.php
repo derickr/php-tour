@@ -1,6 +1,8 @@
 <?php
 require 'vendor/autoload.php';
 
+$pagesDir = __DIR__ . '/../pages/';
+
 $document = new ezcDocumentRst();
 $document->loadFile( 'tour.rst' );
 
@@ -21,7 +23,7 @@ foreach ($docbook->childNodes as $node)
 }
 
 unset( $index[$currentSubjectNr] );
-var_export( $index );
+file_put_contents( $pagesDir . 'index.php', "<?php\nreturn " . var_export( $index, true ) . ";\n?>\n" );
 
 function loopArticle( DomElement $e )
 {
@@ -110,18 +112,23 @@ function processSubject( string $currentTitle, $node )
 function processPage( string $title, array $paras, string $code )
 {
 	global $index;
+	global $pagesDir;
 	global $currentSubjectNr;
 	global $currentPageNr;
 
+	$index[$currentSubjectNr]['children'][$currentPageNr]['title'] = $title;
 
-	$content = "<h1>$title</h1>\n\n";
+	$content = "<h1>$title</h1>\n";
 
 	foreach ($paras as $para) {
-		$content .= "<p>{$para}</p>\n";
+		$content .= "\n<p>\n{$para}\n</p>\n";
 	}
 
-	var_dump($currentSubjectNr, $currentPageNr, $content, $code);
-	$index[$currentSubjectNr]['children'][$currentPageNr]['title'] = $title;
+	$base = sprintf( '%s%03d/%03d', $pagesDir, $currentSubjectNr, $currentPageNr );
+	$code = trim( $code ) . "\n";
+
+	file_put_contents( "{$base}.html", $content );
+	file_put_contents( "{$base}.php", $code );
 }
 
 function processPara( DomElement $node )

@@ -27,8 +27,8 @@ Try that out too!
 
 Now you are ready for your first lesson. Click on "Next" to go there.
 
-You can also use the navigation at the bottom of this page to skip to other
-modules and lessons.
+You can also use the navigation at the top of the page to find a table of
+contents with all the modules and lessons.
 
 ::
 

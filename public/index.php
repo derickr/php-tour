@@ -1,5 +1,14 @@
 <?php
+$index = include "../pages/index.php";
+
 $uri = $_SERVER['REQUEST_URI'];
+
+if ( $uri === '/toc' )
+{
+	include '../templates/toc.php';
+	exit;
+}
+
 preg_match('@(\d+)(/(\d+))?@', $uri, $matches);
 
 $nextPageNr = $prevPageNr = false;
@@ -7,8 +16,6 @@ $nextSubPageNr = $prevSubPageNr = false;
 
 $pageNr    = (int) ($matches[1] ?? 0);
 $subPageNr = (int) ($matches[3] ?? 0);
-
-$index = include "../pages/index.php";
 
 if (!array_key_exists($pageNr, $index)) {
 	$pageNr = 0;

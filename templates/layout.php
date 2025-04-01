@@ -37,6 +37,7 @@
 			<?php endif; ?>
 
 			<ul>
+				<li><a href="/toc">Table of Contents</a></li>
 				<?php foreach ($breadCrumps as $breadCrump): ?>
 				<li><a href="<?= $breadCrump['page'] ?>"><?= $breadCrump['title'] ?></a></li>
 				<?php endforeach; ?>

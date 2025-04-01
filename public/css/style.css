@@ -78,6 +78,10 @@ button {
     padding:0 .5rem 0;
     content:"\203A";
 }
+#breadcrumbs li:first-of-type+li:before {
+    padding:0 .5rem 0;
+    content:"";
+}
 #breadcrumbs a:link,
 #breadcrumbs a:visited {
     border-width:0;
@@ -105,3 +109,24 @@ button {
     background: var(--dark-grey-color);
     z-index: 1;
   }
+
+dl.toc {
+  padding-left: 2em;
+  width: 50%;
+  background-color: initial;
+}
+
+dl.toc dt a {
+  text-decoration: none;
+  color: var(--dark-grey-color);
+}
+
+dl.toc dd a {
+  text-decoration: none;
+  color: var(--dark-blue-color);
+}
+
+
+dl.toc dt a:hover, dl.doc dt a:hover {
+  text-decoration: underline;
+}
